@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1>Uploaded Images</h1>
+    <a href="{% url 'upload' %}">Upload New Image</a>
+    <ul>
+        {% for image in images %}
+            <li>
+                <h2>{{ image.name }}</h2>
+                <img src="{{ image.image.url }}" alt="{{ image.name }}" width="200">
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
